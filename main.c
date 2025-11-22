@@ -52,9 +52,10 @@ float dot_product_C(long long n, float *A, float *B) {
     (double)(end_time - start_time) / CLOCKS_PER_SEC / RUNS; 	\
 })
 
-int main() {
-	srand(time(NULL));
-	long long int vector_length = TWO_TWENTY;
+void run_test(long long vector_length) {
+	printf("\n==================================\n");
+    printf("Testing Vector Size: %lld\n", vector_length);
+    printf("==================================\n");
 	
 	float *A = init_vector(vector_length);
 	float *B = init_vector(vector_length);
@@ -65,13 +66,23 @@ int main() {
 
 	// cross compare the kernel's run times
 	if(asm_result==c_result){
-		printf("ASM Average Time: %f",TIME_TEST(dot_product_asm(vector_length, A, B), 20));
-    	printf("C Average Time: %f",TIME_TEST(dot_product_C(vector_length, A, B), 20));
+		printf("ASM Average Time: %f seconds\n",TIME_TEST(dot_product_asm(vector_length, A, B), 20));
+    	printf("C Average Time: %f seconds\n",TIME_TEST(dot_product_C(vector_length, A, B), 20));
 	}
-	else{printf("Output of asm is different from C's: %f vs %f", &asm_result, &c_result);}
+	else{
+		printf("Output of asm is different from C's: %f vs %f", asm_result, c_result);
+	}
 	
 	free(A);
 	free(B);
+}
+
+int main() {
+	srand(time(NULL));
+	
+	run_test(TWO_TWENTY);
+    run_test(TWO_TWENTYFOUR);
+    run_test(TWO_THIRTY);
 	
 	return 0;
 }
