@@ -15,7 +15,7 @@ bits 64
 global dot_product
 
 dot_product:
-    movss xmm0, [zero]  ; initialize our accumulator xmm0 to zero via move scalar single precision 
+    movss xmm0, [zero]  ; initialize our accumulator xmm0 (this is our sdot) to zero via move scalar single precision 
     cmp rcx, 0          ; check if length left to process is zero
     jle done            ; jump, if so
     
