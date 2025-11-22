@@ -12,9 +12,10 @@ zero dd 0.0
 section .text
 default rel
 bits 64
-global dot_product
 
-dot_product:
+global dot_product_asm
+
+dot_product_asm:
     movss xmm0, [zero]  ; initialize our accumulator xmm0 (this is our sdot) to zero via move scalar single precision 
     cmp rcx, 0          ; check if length left to process is zero
     jle done            ; jump, if so
