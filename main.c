@@ -65,8 +65,8 @@ int main() {
 
 	// cross compare the kernel's run times
 	if(asm_result==c_result){
-		printf("ASM Average Time: %ld",TIME_TEST(dot_product_asm(vector_length, A, B), 20));
-    	printf("C Average Time: %ld",TIME_TEST(dot_product_C(vector_length, A, B), 20));
+		printf("ASM Average Time: %f",TIME_TEST(dot_product_asm(vector_length, A, B), 20));
+    	printf("C Average Time: %f",TIME_TEST(dot_product_C(vector_length, A, B), 20));
 	}
 	else{printf("Output of asm is different from C's: %f vs %f", &asm_result, &c_result);}
 	
