@@ -2,6 +2,10 @@
 
 This project implements a dot product calculation algorithm in x86-64 assembly language and compares its performance against a naive C implementation. The project demonstrates the interface between C and Assembly, passing vectors and lengths as arguments, and retrieving the scalar result.
 
+**Group Members:**
+- Aquino, Bon Windel Estrada
+- Dulatre, Rainier Antolin
+
 ## 1. Running the Program
 
 ### 1.1 Prerequisites
