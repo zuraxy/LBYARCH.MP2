@@ -35,7 +35,7 @@ float* init_vector(long long n) {
 float dot_product_C(long long n, float *A, float *B) {
 	float sdot = 0.0;
 	
-	for(int i=0; i<n;i++) {
+	for(long long i=0; i<n;i++) {
 		sdot+= A[i]*B[i];
 	}
 
@@ -63,6 +63,9 @@ void run_test(long long vector_length) {
 	//sanity check - cross check asm and c's results
 	float asm_result = dot_product_asm(vector_length, A, B);
 	float c_result = dot_product_C(vector_length, A, B);
+	
+	printf("ASM Kernel Result: %f\n", asm_result);
+	printf("C Kernel Result: %f\n\n", c_result);
 
 	// cross compare the kernel's run times
 	if(asm_result==c_result){
