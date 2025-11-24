@@ -73,8 +73,9 @@ The x86-64 Assembly implementation consistently outperforms the C implementation
 
 The program verifies that the result from the Assembly kernel matches the result from the C kernel before proceeding to the performance test.
 
-### 4.1 Screenshot of Output
-![Program Output](performanceTime.png)
+### 4.1 Results
+![Program Output](ProgramOutput.png)
+![Timing Comparison](PerformanceTimes.png)
 
 Below is a transcript of the actual program output demonstrating the correctness check and timing results:
 
